@@ -6864,3 +6864,445 @@ h6,
     padding: 34px 26px 38px;
   }
 }
+
+/* =========================================================
+   PHONE / MOBILE POLISH — FINAL
+   Keeps the Hogwarts experience cinematic while making every
+   section comfortable on narrow screens.
+========================================================= */
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 112px;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .nav-inner {
+    width: 100%;
+    min-height: 112px;
+    padding: 10px 14px 8px;
+    gap: 8px;
+  }
+
+  .brand {
+    min-width: 0;
+    max-width: calc(100% - 55px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: .85rem;
+    letter-spacing: .14em;
+  }
+
+  .music-button {
+    flex: 0 0 auto;
+    margin-left: auto;
+    min-width: 38px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+  }
+
+  .main-nav {
+    order: 3;
+    width: calc(100% + 28px);
+    margin-left: -14px;
+    justify-content: flex-start;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 7px 14px 5px;
+    border-top: 1px solid rgba(139,0,0,.18);
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+    padding: 8px 11px;
+    font-size: .57rem;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  .inner-page {
+    padding-top: var(--header-height);
+  }
+
+  .page-hero {
+    min-height: 48vh;
+    padding: 100px 18px 55px;
+  }
+
+  .page-hero-inner {
+    width: 100%;
+  }
+
+  .page-hero h1,
+  .page-hero-inner h1 {
+    font-size: clamp(2.25rem, 12vw, 4rem);
+    line-height: .98;
+    overflow-wrap: anywhere;
+  }
+
+  .page-description {
+    max-width: 100%;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .hero-real,
+  .hero,
+  .hero-section {
+    min-height: 82vh;
+  }
+
+  .hero-content {
+    width: calc(100% - 36px);
+    margin-left: 18px;
+    padding-top: 95px;
+    padding-bottom: 55px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.65rem, 14vw, 4.8rem);
+    line-height: .92;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .hero-cta-group,
+  .entry-content .entry-actions,
+  .castle-scene-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-cta-group > *,
+  .entry-button,
+  .primary-button,
+  .ghost-button,
+  .castle-scene-cta,
+  .castle-begin-button {
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+  }
+
+  .wizarding-entry {
+    min-height: 100svh;
+    padding: 24px 18px;
+  }
+
+  .entry-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 4px;
+  }
+
+  .entry-kicker {
+    font-size: .58rem;
+    letter-spacing: .22em;
+  }
+
+  .entry-content h1 {
+    font-size: clamp(3rem, 18vw, 5.2rem);
+    line-height: .9;
+  }
+
+  .entry-subtitle {
+    font-size: .62rem;
+    letter-spacing: .18em;
+    text-align: center;
+  }
+
+  .entry-symbol {
+    transform: scale(.82);
+    margin-bottom: 8px;
+  }
+
+  .entry-button {
+    padding: 14px 16px;
+    font-size: .62rem;
+    letter-spacing: .1em;
+  }
+
+  .arrival-section,
+  .atmosphere-section,
+  .sorting-section,
+  .castle-gallery-section,
+  .castle-study-section,
+  .site-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    overflow-wrap: anywhere;
+  }
+
+  .section-heading > p:last-child {
+    font-size: 1.08rem;
+  }
+
+  .arrival-grid,
+  .location-grid,
+  .house-grid,
+  .character-grid,
+  .class-grid,
+  .classroom-grid,
+  .spell-grid,
+  .creature-grid,
+  .professor-list,
+  .house-image-grid,
+  .library-links,
+  .castle-directory-grid,
+  .castle-experience-link-grid,
+  .character-profile-grid,
+  .professor-profile-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .arrival-card {
+    min-height: 245px;
+    padding: 24px;
+  }
+
+  .arrival-card h3 {
+    margin-top: 48px;
+    font-size: 1.12rem;
+  }
+
+  .arrival-card p {
+    font-size: 1.03rem;
+  }
+
+  .castle-gallery-page,
+  .character-page,
+  .professor-page,
+  .creatures-archive-page,
+  .spells-archive-page,
+  .artifacts-archive-page,
+  .villains-archive-page {
+    overflow-x: hidden;
+  }
+
+  .castle-gallery-hero,
+  .castle-gallery-hero-image {
+    min-height: 58vh;
+  }
+
+  .castle-gallery-hero-content,
+  .castle-entrance-content,
+  .castle-scene-content {
+    width: calc(100% - 36px);
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .castle-gallery-hero-content h1,
+  .castle-entrance-content h1,
+  .castle-scene-content h2 {
+    font-size: clamp(2.25rem, 12vw, 4rem);
+    line-height: .98;
+    overflow-wrap: anywhere;
+  }
+
+  .castle-cinematic-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .castle-cinematic-card {
+    min-height: 270px;
+  }
+
+  .castle-cinematic-detail,
+  .character-detail,
+  .professor-detail,
+  .house-detail-hero,
+  .classroom-detail-panel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .castle-cinematic-detail-image,
+  .character-detail-image,
+  .professor-detail-image,
+  .house-detail-image,
+  .classroom-detail-image {
+    min-height: 260px;
+    max-height: 360px;
+  }
+
+  .castle-cinematic-detail-content,
+  .character-detail-content,
+  .professor-detail-content,
+  .house-detail-content,
+  .classroom-detail-content {
+    padding: 28px 20px 32px;
+  }
+
+  .castle-cinematic-detail-content h2,
+  .character-detail-content h2,
+  .professor-detail-content h2,
+  .house-detail-content h2,
+  .classroom-detail-content h2 {
+    font-size: clamp(1.7rem, 8vw, 2.6rem);
+    overflow-wrap: anywhere;
+  }
+
+  .character-card,
+  .class-card,
+  .spell-card,
+  .creature-card,
+  .house-card,
+  .classroom-card-clickable {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .character-image,
+  .classroom-image,
+  .house-card-image,
+  .spell-card img,
+  .creature-card img {
+    width: 100%;
+  }
+
+  .character-info,
+  .classroom-card-content,
+  .house-card-body {
+    padding: 18px;
+  }
+
+  .character-card h3,
+  .class-card h3,
+  .spell-card h3,
+  .creature-card h3,
+  .house-card h3 {
+    font-size: 1.05rem;
+    overflow-wrap: anywhere;
+  }
+
+  .classroom-detail-panel {
+    margin-top: 42px;
+    scroll-margin-top: 125px;
+  }
+
+  .classroom-detail-image {
+    min-height: 240px;
+  }
+
+  .classroom-detail-content > p:not(.section-kicker):not(.classroom-detail-note) {
+    font-size: 1.08rem;
+  }
+
+  .sorting-section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .sorting-hat {
+    transform: scale(.68);
+    margin: -30px auto;
+  }
+
+  .house-detail-page {
+    overflow-x: hidden;
+  }
+
+  .house-detail-trait {
+    min-width: 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 16px 22px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main-nav {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nav-link {
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: .53rem;
+  }
+
+  .hero-content,
+  .castle-gallery-hero-content,
+  .castle-entrance-content,
+  .castle-scene-content {
+    width: calc(100% - 28px);
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .hero-content h1,
+  .entry-content h1 {
+    font-size: clamp(2.55rem, 16vw, 3.8rem);
+  }
+
+  .entry-button {
+    font-size: .56rem;
+  }
+}
