@@ -161,6 +161,7 @@ function findCastleAsset(name) {
     "dungeons": ["dungeons", "dungeon"],
     "hogwarts bridge": ["hogwarts-bridge", "bridge"],
     "headmaster's office": ["headmasters-office", "headmaster-office", "dumbledore-office"],
+    "owlery": ["owlery"],
     "room of requirement": ["room-of-requirement", "roomofrequirement"],
     "black lake": ["black-lake", "blacklake"],
     "boathouse": ["boathouse"],
@@ -338,7 +339,13 @@ const characters = [
     name: "Ron Weasley",
     role: "Wizard • Gryffindor",
     description:
-      "A loyal friend whose humour, courage and determination carry him through Hogwarts adventures.",
+      "A loyal Gryffindor and one of Harry's closest friends, Ron brings humour, courage and fierce loyalty to the trio's most dangerous adventures.",
+  },
+  {
+    name: "Draco Malfoy",
+    role: "Slytherin Student",
+    description:
+      "A Slytherin student from an old wizarding family whose rivalry with Harry shapes much of his Hogwarts story, while his choices reveal a more complicated side beneath the arrogance.",
   },
   {
     name: "Luna Lovegood",
@@ -366,21 +373,21 @@ const characters = [
   },
   {
     name: "Sirius Black",
-    role: "Wizard • Marauder",
+    role: "Wizard • Marauder • Animagus",
     description:
-      "A former Hogwarts student and Marauder whose complicated history is deeply connected to Harry and the wizarding world.",
-  },
-  {
-    name: "Draco Malfoy",
-    role: "Slytherin Student",
-    description:
-      "A Slytherin student whose complicated relationship with Hogwarts and its students develops over the years.",
+      "Harry's godfather and a former Marauder. Sirius became an Animagus and could transform into a large black dog, a secret that became important to his story and his years at Hogwarts.",
   },
   {
     name: "Rubeus Hagrid",
     role: "Keeper of Keys & Grounds",
     description:
-      "A much-loved Hogwarts figure with a deep connection to magical creatures and the castle grounds.",
+      "A much-loved Hogwarts figure with a deep connection to magical creatures and the castle grounds, known for his enormous heart and loyalty to his friends.",
+  },
+  {
+    name: "Dobby",
+    role: "House-Elf • Hogwarts Ally",
+    description:
+      "A brave house-elf whose loyalty, kindness and determination make him an unforgettable ally. Dobby ultimately chooses to help Harry and stand up for his own freedom.",
   },
 ];
 
@@ -391,7 +398,7 @@ const professors = [
   { name: "Filius Flitwick", role: "Charms Professor", description: "The Charms professor who teaches students the careful wandwork and spellcraft needed to master enchantments." },
   { name: "Pomona Sprout", role: "Herbology Professor", description: "The warm but practical Herbology professor who guides students through the cultivation and study of magical plants." },
   { name: "Rubeus Hagrid", role: "Care of Magical Creatures", description: "Hogwarts' Keeper of Keys and Grounds, with an extraordinary knowledge of magical creatures and the castle grounds." },
-  { name: "Remus Lupin", role: "Defence Against the Dark Arts", description: "A thoughtful Defence Against the Dark Arts professor who combines practical lessons with patience and empathy." },
+  { name: "Remus Lupin", role: "Defence Against the Dark Arts • Werewolf", description: "A thoughtful Defence Against the Dark Arts professor who teaches practical defence with patience and empathy. Remus is also a werewolf, a secret that shapes much of his life and his connection to Hogwarts." },
   { name: "Sybill Trelawney", role: "Divination Professor", description: "The Divination professor whose lessons explore signs, visions, symbolism and the mysterious possibilities of the future." },
   { name: "Alastor Moody", role: "Defence Against the Dark Arts", description: "A legendary Auror who brings a strict, practical approach to magical defence and awareness of dark threats." },
   { name: "Dolores Umbridge", role: "Defence Against the Dark Arts Professor", description: "A Ministry-appointed Hogwarts professor whose rigid approach to teaching and school authority made her tenure distinctive." },
@@ -1201,6 +1208,7 @@ function HogwartsPage() {
     ["library", "Library", "Knowledge", "Library", "A vast collection of magical books and one of the quietest places inside Hogwarts."],
     ["trophy-room", "Trophy Room", "Castle Interior", "Trophy Room", "A room filled with trophies, awards and records celebrating generations of Hogwarts achievement."],
     ["headmasters-office", "Headmaster's Office", "Tower", "Headmaster's Office", "The private office of the Hogwarts headmaster, high above the castle and surrounded by magical artefacts."],
+    ["owlery", "Owlery", "Castle Tower", "Owlery", "A high stone tower where Hogwarts owls rest, roost and carry letters between the castle and the wider wizarding world."],
     ["room-of-requirement", "Room of Requirement", "Hidden Space", "Room of Requirement", "A mysterious room that appears when someone has a genuine need for it."],
     ["dungeons", "Dungeons", "Underground", "Dungeons", "Dark stone chambers beneath Hogwarts, including the Potions classroom and ancient corridors."],
     ["astronomy-tower", "Astronomy Tower", "Tower", "Astronomy Tower", "One of the highest points of Hogwarts and the setting for Astronomy lessons beneath the night sky."],
