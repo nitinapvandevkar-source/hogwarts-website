@@ -7335,3 +7335,188 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================================
+   FINAL CONTENT EXPANSION + NEW CHARACTER / CASTLE POLISH
+   Keeps the existing Hogwarts design and mobile responsiveness.
+========================================================= */
+
+/* Character cards: support the expanded character collection cleanly. */
+.character-profile-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.character-profile-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.character-profile-image {
+  height: 390px;
+}
+
+.character-profile-image img {
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.character-profile-info {
+  min-height: 118px;
+}
+
+.character-profile-info h2 {
+  line-height: 1.25;
+}
+
+/* Dobby, Draco, Lupin and Sirius use the same cinematic profile treatment. */
+.character-profile-card:nth-child(4) .character-profile-image img,
+.character-profile-card:nth-child(10) .character-profile-image img {
+  object-position: center 15%;
+}
+
+.character-profile-card:nth-child(11) .character-profile-image img {
+  object-position: center 20%;
+}
+
+/* Expanded detail descriptions should remain readable rather than cramped. */
+.character-detail-content p {
+  max-width: 720px;
+  line-height: 1.72;
+}
+
+.character-detail-content .character-detail-description,
+.character-detail-description {
+  font-size: 1.16rem;
+  line-height: 1.78;
+  color: var(--text-soft);
+}
+
+/* Castle directory / Owlery and other expanded location cards. */
+.castle-directory-grid {
+  align-items: stretch;
+}
+
+.castle-directory-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.castle-directory-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.castle-directory-info h3 {
+  line-height: 1.25;
+}
+
+.castle-directory-info > span {
+  line-height: 1.65;
+}
+
+/* Long-form location detail copy. */
+.location-detail-description,
+.location-detail-content p {
+  max-width: 760px;
+  line-height: 1.78;
+}
+
+/* Professors: expanded information remains comfortable on desktop. */
+.professor-profile-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.professor-profile-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.professor-profile-image {
+  height: 390px;
+}
+
+.professor-profile-image img {
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.professor-detail-content p {
+  line-height: 1.78;
+}
+
+/* All cinematic collection cards support larger descriptions without layout drift. */
+.cinematic-collection-grid {
+  align-items: stretch;
+}
+
+.cinematic-collection-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.cinematic-collection-card-copy h2 {
+  line-height: 1.25;
+}
+
+.cinematic-collection-detail-content p {
+  line-height: 1.78;
+}
+
+/* Keep all newly expanded sections visually consistent with the blood-red theme. */
+.character-profile-card:hover,
+.professor-profile-card:hover,
+.cinematic-collection-card:hover,
+.castle-directory-card:hover {
+  border-color: rgba(167, 25, 32, 0.58);
+}
+
+/* =========================================================
+   FINAL RESPONSIVE SAFETY
+========================================================= */
+
+@media (max-width: 1100px) {
+  .character-profile-grid,
+  .professor-profile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .character-profile-grid,
+  .professor-profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .character-profile-image,
+  .professor-profile-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 560px) {
+  .character-profile-grid,
+  .professor-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-profile-image,
+  .professor-profile-image {
+    height: 410px;
+  }
+
+  .character-profile-info {
+    min-height: 0;
+  }
+
+  .character-detail-content p,
+  .character-detail-description,
+  .professor-detail-content p,
+  .location-detail-description,
+  .location-detail-content p,
+  .cinematic-collection-detail-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
