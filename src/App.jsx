@@ -737,9 +737,9 @@ function Navigation({ musicOn, toggleMusic }) {
 
 function WorldLayout() {
   const audioRef = useRef(null);
-  const [musicOn, setMusicOn] = useState(() => {
-    return localStorage.getItem("wizardMusic") === "true";
-  });
+  // Music starts ONLY after the user clicks "ENTER THE WIZARDING WORLD".
+  // This prevents the BGM from playing on the entry screen.
+  const [musicOn, setMusicOn] = useState(false);
 
   const startMusic = async () => {
     const audio = audioRef.current;
@@ -788,11 +788,9 @@ function WorldLayout() {
     audio.loop = true;
     audio.volume = 0.42;
 
-    if (musicOn) {
-      audio.play().catch(() => {
-        // Browser autoplay protection.
-      });
-    }
+    // IMPORTANT:
+    // Do NOT call audio.play() here.
+    // Playback must begin from the user's ENTER button click.
   }, []);
 
   return (
