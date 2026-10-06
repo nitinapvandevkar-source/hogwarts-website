@@ -7520,3 +7520,164 @@ img {
     line-height: 1.7;
   }
 }
+
+
+/* =========================================================
+   CLASSROOMS + CREATURES — EXPANDED INFORMATION UPDATE
+   Keeps the existing cinematic Hogwarts design while giving
+   the longer descriptions comfortable reading space.
+========================================================= */
+
+/* Classroom archive cards */
+.classroom-card {
+  min-height: 430px;
+}
+
+.classroom-card-copy {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.classroom-card-copy h2,
+.classroom-card-copy h3 {
+  margin-bottom: 10px;
+  color: #eeeeee;
+  line-height: 1.12;
+}
+
+.classroom-card-copy p {
+  color: #bdbdbd;
+  line-height: 1.65;
+  font-size: .98rem;
+  margin: 0;
+}
+
+.classroom-card-copy .eyebrow,
+.classroom-card-copy .card-kicker,
+.classroom-card-copy .classroom-professor {
+  color: #a71920;
+}
+
+.classroom-card:hover .classroom-card-copy h2,
+.classroom-card:hover .classroom-card-copy h3 {
+  color: #c92831;
+}
+
+/* Classroom detail panel */
+.classroom-detail-content {
+  padding: 38px 40px 42px;
+}
+
+.classroom-detail-content p {
+  max-width: 760px;
+  color: #c7c7c7;
+  font-size: 1.08rem;
+  line-height: 1.78;
+}
+
+.classroom-detail-content h2 {
+  color: #a71920;
+}
+
+.classroom-detail-content .detail-description,
+.classroom-detail-content .description {
+  line-height: 1.8;
+}
+
+/* Creature archive cards */
+.creature-grid {
+  align-items: stretch;
+}
+
+.creatures-archive-page .cinematic-collection-card {
+  min-height: 100%;
+}
+
+.creatures-archive-page .cinematic-collection-card-copy {
+  padding: 24px 24px 28px;
+}
+
+.creatures-archive-page .cinematic-collection-card-copy h2 {
+  color: #eeeeee;
+  line-height: 1.12;
+  margin-bottom: 10px;
+}
+
+.creatures-archive-page .cinematic-collection-card-copy p {
+  color: #bdbdbd;
+  font-size: .99rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.creatures-archive-page .cinematic-collection-card:hover .cinematic-collection-card-copy h2,
+.creatures-archive-page .cinematic-collection-card.selected .cinematic-collection-card-copy h2 {
+  color: #c92831;
+}
+
+/* Creature detail */
+.creatures-archive-page .cinematic-collection-detail-content {
+  padding: 38px 42px 42px;
+}
+
+.creatures-archive-page .cinematic-collection-detail-content p {
+  max-width: 780px;
+  color: #c7c7c7;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+/* Make longer descriptions remain readable without making cards huge. */
+.classroom-card-copy p,
+.creatures-archive-page .cinematic-collection-card-copy p {
+  overflow-wrap: anywhere;
+}
+
+/* Responsive readability */
+@media (max-width: 1050px) {
+  .classroom-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .classroom-card {
+    min-height: 420px;
+  }
+
+  .classroom-detail-content,
+  .creatures-archive-page .cinematic-collection-detail-content {
+    padding: 32px 28px 36px;
+  }
+}
+
+@media (max-width: 700px) {
+  .classroom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .classroom-card {
+    min-height: 0;
+  }
+
+  .classroom-card-copy {
+    padding: 20px 20px 24px;
+  }
+
+  .classroom-card-copy p,
+  .creatures-archive-page .cinematic-collection-card-copy p {
+    font-size: .98rem;
+    line-height: 1.65;
+  }
+
+  .classroom-detail-content,
+  .creatures-archive-page .cinematic-collection-detail-content {
+    padding: 28px 20px 32px;
+  }
+
+  .classroom-detail-content p,
+  .creatures-archive-page .cinematic-collection-detail-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}

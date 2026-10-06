@@ -48,14 +48,19 @@ function findClassroomAsset(className) {
   const normalized = className.toLowerCase();
 
   const aliases = {
-    "charms": ["charms-classroom", "charms"],
-    "transfiguration": ["transfiguration-classroom", "transfiguration"],
-    "potions": ["potions-classroom", "potions"],
-    "herbology": ["herbology-classroom", "herbology"],
-    "defence against the dark arts": ["defence-classroom", "defense-classroom", "defence", "defense"],
+    "ancient runes": ["ancient-runes-classroom", "ancient-runes"],
+    "arithmancy": ["arithmancy-classroom", "arithmancy"],
     "astronomy": ["astronomy-classroom", "astronomy"],
+    "care of magical creatures": ["care-of-magical-creatures-classroom", "care-of-magical-creatures", "creatures-classroom"],
+    "charms": ["charms-classroom", "charms"],
+    "defence against the dark arts": ["defence-against-dark-arts-classroom", "defence-classroom", "defense-classroom", "defence", "defense"],
     "divination": ["divination-classroom", "divination"],
     "flying": ["flying-classroom", "flying"],
+    "herbology": ["herbology-classroom", "herbology"],
+    "herbology greenhouses": ["herbology-greenhouses", "herbology-greenhouse", "greenhouses"],
+    "history of magic": ["history-of-magic-classroom", "history-of-magic"],
+    "potions": ["potions-classroom", "potions"],
+    "transfiguration": ["transfiguration-classroom", "transfiguration"],
   };
 
   const terms = aliases[normalized] || [normalized];
@@ -407,14 +412,84 @@ const professors = [
 ];
 
 const classes = [
-  { name: "Charms", professor: "Filius Flitwick", description: "The study of spells that add properties or effects to objects and people." },
-  { name: "Transfiguration", professor: "Minerva McGonagall", description: "The demanding art of changing the form or appearance of an object or creature." },
-  { name: "Potions", professor: "Severus Snape", description: "The careful preparation of magical mixtures using ingredients, timing and precision." },
-  { name: "Herbology", professor: "Pomona Sprout", description: "The study and cultivation of magical plants and fungi." },
-  { name: "Defence Against the Dark Arts", professor: "Remus Lupin", description: "Practical magical defence against dangerous creatures, curses and dark forces." },
-  { name: "Astronomy", professor: "Aurora Sinistra", description: "The observation and study of stars, planets and celestial movements." },
-  { name: "Divination", professor: "Sybill Trelawney", description: "A subject concerned with interpreting signs and attempting to perceive possible futures." },
-  { name: "Flying", professor: "Madam Rolanda Hooch", description: "The first steps into broom flight, balance and safe aerial movement." },
+  {
+    name: "Ancient Runes",
+    professor: "Ancient Runes Professor",
+    description:
+      "The study of old magical symbols and written scripts used to understand spells, inscriptions and ancient wizarding knowledge. Students learn to recognise runic meanings and interpret magical texts that have survived through generations.",
+  },
+  {
+    name: "Arithmancy",
+    professor: "Arithmancy Professor",
+    description:
+      "A magical discipline that studies the meanings and patterns associated with numbers. Students use numerical relationships to explore magical properties, predictions and the hidden structure behind certain forms of magic.",
+  },
+  {
+    name: "Astronomy",
+    professor: "Aurora Sinistra",
+    description:
+      "The observation and study of stars, planets, constellations and celestial movements from the Hogwarts Astronomy Tower. Students learn to read the night sky and understand how the heavens are connected to the magical world.",
+  },
+  {
+    name: "Care of Magical Creatures",
+    professor: "Rubeus Hagrid",
+    description:
+      "The study of magical creatures, including their behaviour, habitats, abilities and proper care. Students learn that approaching a magical creature requires knowledge, patience and respect for its nature.",
+  },
+  {
+    name: "Charms",
+    professor: "Filius Flitwick",
+    description:
+      "The study of spells that add properties or magical effects to objects, people and the world around them. Charms lessons develop precise wand movements, pronunciation and control so students can use enchantments safely and effectively.",
+  },
+  {
+    name: "Defence Against the Dark Arts",
+    professor: "Remus Lupin",
+    description:
+      "Practical magical defence against dangerous creatures, curses, dark enchantments and other threats. Lessons combine knowledge with practical preparation so students can recognise danger and respond with confidence.",
+  },
+  {
+    name: "Divination",
+    professor: "Sybill Trelawney",
+    description:
+      "A mysterious subject concerned with interpreting signs and attempting to perceive possible futures. Lessons may involve crystal balls, tea leaves, dream interpretation and other traditional forms of magical prediction.",
+  },
+  {
+    name: "Flying",
+    professor: "Madam Rolanda Hooch",
+    description:
+      "The first steps into broom flight, balance, control and safe aerial movement. Students learn the foundations of riding a broom before developing the confidence needed for faster and more advanced wizarding flight.",
+  },
+  {
+    name: "Herbology",
+    professor: "Pomona Sprout",
+    description:
+      "The study and cultivation of magical plants, fungi and other unusual forms of wizarding flora. Students learn how different plants grow, what properties they possess and how they can be handled safely.",
+  },
+  {
+    name: "Herbology Greenhouses",
+    professor: "Pomona Sprout",
+    description:
+      "The greenhouse lessons provide a practical environment for growing and studying magical plants in controlled conditions. Students work directly with unusual specimens while learning the care, preparation and precautions each plant requires.",
+  },
+  {
+    name: "History of Magic",
+    professor: "Professor Binns",
+    description:
+      "The study of important events, people and conflicts that shaped the wizarding world throughout history. Students explore the past to understand how magical societies, traditions and major historical events developed over time.",
+  },
+  {
+    name: "Potions",
+    professor: "Severus Snape",
+    description:
+      "The careful preparation of magical mixtures using ingredients, timing, temperature and precise technique. A successful potion requires patience and accuracy, because even a small mistake can change the result.",
+  },
+  {
+    name: "Transfiguration",
+    professor: "Minerva McGonagall",
+    description:
+      "The demanding art of changing the form, appearance or nature of an object or creature through controlled magic. Students must combine concentration, precision and a strong understanding of magical transformation.",
+  },
 ];
 
 const places = [
@@ -502,14 +577,60 @@ const spells = [
 ];
 
 const creatures = [
-  { name: "Acromantula", role: "Magical Arachnid", description: "A giant intelligent spider associated with the Forbidden Forest and dangerous magical encounters." },
-  { name: "Basilisk", role: "Legendary Serpent", description: "A gigantic magical serpent surrounded by some of the darkest legends in Hogwarts history." },
-  { name: "Centaur", role: "Forest Dweller", description: "A magical forest-dwelling being known for astronomy, divination and a deep connection with the natural world." },
-  { name: "Dementor", role: "Dark Magical Being", description: "A terrifying dark being associated with fear, despair and the guarded world of Azkaban." },
-  { name: "Dragon", role: "Magical Beast", description: "One of the most powerful magical creatures, known for immense strength, fire and formidable presence." },
-  { name: "Hippogriff", role: "Magical Beast", description: "A proud creature combining the features of an eagle and a horse, requiring respect and careful manners." },
-  { name: "Phoenix", role: "Magical Bird", description: "A rare magical bird associated with rebirth, loyalty and remarkable magical properties." },
-  { name: "Thestral", role: "Winged Creature", description: "A mysterious winged creature known for its skeletal appearance and connection to those who have witnessed death." },
+  {
+    name: "Acromantula",
+    role: "Magical Arachnid",
+    description:
+      "A giant intelligent spider associated with the Forbidden Forest and dangerous magical encounters. Acromantulas are known for their complex behaviour and remarkable ability to communicate with others of their kind.",
+  },
+  {
+    name: "Basilisk",
+    role: "Legendary Serpent",
+    description:
+      "A gigantic magical serpent surrounded by some of the darkest legends in Hogwarts history. The Basilisk is an exceptionally dangerous creature whose reputation has become part of wizarding folklore.",
+  },
+  {
+    name: "Centaur",
+    role: "Forest Dweller",
+    description:
+      "A magical forest-dwelling being known for astronomy, divination and a deep connection with the natural world. Centaurs possess their own traditions and knowledge and are often cautious about becoming involved in wizarding affairs.",
+  },
+  {
+    name: "Dementor",
+    role: "Dark Magical Being",
+    description:
+      "A terrifying dark magical being associated with fear, despair and the guarded world of Azkaban. Their presence can create an intense sense of cold and hopelessness, making them among the most feared beings in the wizarding world.",
+  },
+  {
+    name: "Dragon",
+    role: "Magical Beast",
+    description:
+      "One of the most powerful magical creatures, known for immense strength, fire and a formidable presence. Different breeds have distinct appearances and abilities, making dragons both fascinating and extremely difficult to handle.",
+  },
+  {
+    name: "Hippogriff",
+    role: "Magical Beast",
+    description:
+      "A proud creature combining the features of an eagle and a horse, requiring respect and careful manners. A Hippogriff responds best when approached calmly and respectfully, making trust an important part of handling one.",
+  },
+  {
+    name: "Nagini",
+    role: "Magical Serpent",
+    description:
+      "A large magical serpent with a significant connection to the darker chapters of wizarding history. Nagini is remembered as a dangerous and unusual magical creature whose story is closely tied to Voldemort.",
+  },
+  {
+    name: "Phoenix",
+    role: "Magical Bird",
+    description:
+      "A rare magical bird associated with rebirth, loyalty and remarkable magical properties. Phoenixes are known for their extraordinary resilience and for forming powerful bonds with those they trust.",
+  },
+  {
+    name: "Thestral",
+    role: "Winged Creature",
+    description:
+      "A mysterious winged creature known for its skeletal appearance and connection to those who have witnessed death. Thestrals are intelligent, gentle when treated properly and capable of carrying riders through the air.",
+  },
 ];
 
 /* =========================================================
