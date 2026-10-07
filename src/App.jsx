@@ -2123,7 +2123,8 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        Unofficial fan-made wizarding archive.
+        <div>Created by Nitin Devkar</div>
+        <div>Unofficial fan-made wizarding archive.</div>
       </div>
 
     </footer>
